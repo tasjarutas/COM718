@@ -56,7 +56,7 @@ exports.createView = async (req, res) => {
       regions: regions,
       errors: {}
     });
-
+    console.log("hello world")
   } catch (e) {
     res.status(404).send({
       message: `could not generate create data`,

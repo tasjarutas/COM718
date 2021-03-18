@@ -7,5 +7,4 @@ const countrySchema = new Schema(
     },
     { timestamps: true }
 );
-
 module.exports = mongoose.model("Country", countrySchema);

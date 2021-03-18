@@ -13,7 +13,7 @@ const tastingSchema = new Schema(
     variety: String,
     province: String,
     country: String,
-    winery: String,
+    winery: String, 
     taster_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Taster",
