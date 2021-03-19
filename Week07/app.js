@@ -56,8 +56,6 @@ app.get("/tasters/delete/:id", tasterController.delete);
 app.get("/tasters/update/:id", tasterController.edit);
 app.post("/tasters/update/:id", tasterController.update);
 
-
-
 app.get("/create-tasting", tastingController.createView);
 app.post("/create-tasting", tastingController.create);
 app.get("/update-tasting/:id", tastingController.edit);
