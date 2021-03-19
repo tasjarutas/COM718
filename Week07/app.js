@@ -3,12 +3,13 @@ const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 var bodyParser = require('body-parser')
-
+const countriesModel = require("./models/Country")
 /**
  * Controllers (route handlers).
  */
 const tasterController = require("./controllers/taster");
 const tastingController = require("./controllers/tasting");
+const homeController = require("./controllers/home");
 
 const app = express();
 app.set("view engine", "ejs");
@@ -41,9 +42,8 @@ app.use(express.static(path.join(__dirname, "views")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+
+app.get("/", homeController.list);
 
 app.get("/create-taster", (req, res) => {
   res.render("create-taster", { errors: {} });
@@ -56,13 +56,14 @@ app.get("/tasters/delete/:id", tasterController.delete);
 app.get("/tasters/update/:id", tasterController.edit);
 app.post("/tasters/update/:id", tasterController.update);
 
-app.get("/tastings", tastingController.list);
 
-app.get("/create-tasting", (req, res) => {
-  res.render("create-tasting", { errors: {} });
-});
 
 app.get("/create-tasting", tastingController.createView);
+app.post("/create-tasting", tastingController.create);
+app.get("/update-tasting/:id", tastingController.edit);
+app.post("/update-tasting/:id", tastingController.update);
+
+app.get("/tastings", tastingController.list);
 app.get("/tastings/delete/:id", tastingController.delete);
 
 app.listen(WEB_PORT, () => {

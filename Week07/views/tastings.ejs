@@ -29,6 +29,9 @@
 <div class="container">
     <div class="row col-md-12 col-md-offset-2 custyle mx-auto">
         <h1 class="mx-auto"> 🍷 Wine Tasting 🍷</h1>
+      <div>
+          <a class='btn btn-info btn-xs' href="/create-tasting" ><span class="glyphicon glyphicon-edit"></span> Create a new Tasting</a> 
+      </div>
     <table class="table table-striped custab">
     <thead>
         <tr>
@@ -47,7 +50,7 @@
                   <td><%=  tasting.description  %></td>
                   <td><%=  tasting.price  %></td>
                   <td><%=  tasting.points  %></td>
-                  <td class="text-center"><a class='btn btn-info btn-xs' href="/create-tasting" ><span class="glyphicon glyphicon-edit"></span> Edit</a> 
+                  <td class="text-center"><a class='btn btn-info btn-xs' ><span class="glyphicon glyphicon-edit"></span> Edit</a> 
                   <a  href="/tastings/delete/<%= tasting.id %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>                
                 </tr>
                 <% }); %>  
