@@ -8,7 +8,7 @@ const loading = require("loading-cli");
 /**
  * constants
  */
-const uri = "mongodb://localhost:27017/wine";
+const uri = "mongodb+srv://admin:com7182021@cluster0.xe2w2.mongodb.net/wine?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 
 async function main() {
